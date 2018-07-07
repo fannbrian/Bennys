@@ -8,7 +8,9 @@ public class PauseMenu : MonoBehaviour {
     public static bool GameIsPaused = false;  // public to be accessible from other scripts. static to be easily checked from other scripts. 
 
     public GameObject pauseMenuUI; // Pause Menu UI game object assigned in inspector
-	
+
+    public GameObject settingsPanelUI; // Options Menu UI game object assigned in inspector
+
 	// Update is called once per frame
 	void Update ()    
     {
@@ -37,6 +39,18 @@ public class PauseMenu : MonoBehaviour {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+    }
+
+    public void Settings()
+    {
+        pauseMenuUI.SetActive(false);
+        settingsPanelUI.SetActive(true);
+    }
+
+    public void BackToPause()
+    {
+        pauseMenuUI.SetActive(true);
+        settingsPanelUI.SetActive(false);
     }
 
     public void LoadMenu() // If menu button is pressed, then load Main Menu scene
