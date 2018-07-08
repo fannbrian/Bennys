@@ -15,6 +15,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 15deb9d2c3e29d8449929b4c4f42fa69
+    name: MusicPitch
   - guid: 24c1d7e55c8d7ff4aa1e514ceb832fa3
     name: Music
   - guid: 4576c95ee0dd5774ab0249bfca7f1c62
