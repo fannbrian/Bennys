@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TableInteraction : MonoBehaviour, IInteractable {
-  //  public TableInteraction tableoption;
-	// Use this for initialization
+    public GameObject canvasObj;
+   public PlayerController player;
 	void Start () {
-      //  tableoption = GetComponent<TableInteraction>();
-     //   tableoption.enabled = false;
-	}
+        canvasObj.GetComponent<Canvas>().enabled = false;
+        player.GetComponent<PlayerController>().enabled = true;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -17,6 +17,7 @@ public class TableInteraction : MonoBehaviour, IInteractable {
    public void OnInteraction()
     {
         Debug.Log("I'm a Table");
-     //   tableoption.enabled = true;
+        canvasObj.GetComponent<Canvas>().enabled = true;
+       player.GetComponent<PlayerController>().enabled = false;
     }
 }
