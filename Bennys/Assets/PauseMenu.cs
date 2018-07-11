@@ -7,6 +7,8 @@ public class PauseMenu : MonoBehaviour {
 
     public static bool GameIsPaused = false;  // public to be accessible from other scripts. static to be easily checked from other scripts. 
 
+    public GameObject pauseButton; // Pause button clicked to pause game. Disappears once paused. Reappears when playing game. 
+
     public GameObject pauseMenuUI; // Pause Menu UI game object assigned in inspector
 
     public GameObject settingsPanelUI; // Options Menu UI game object assigned in inspector
@@ -19,10 +21,12 @@ public class PauseMenu : MonoBehaviour {
             if (GameIsPaused)   // if escape key is pressed and GameIsPaused == true, then game will resume .
             {
                 Resume();
+                pauseButton.SetActive(false);
             } 
             else   
             {
                 Pause();
+                pauseButton.SetActive(true);
             }
         }
 	}

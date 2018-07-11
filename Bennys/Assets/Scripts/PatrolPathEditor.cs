@@ -7,6 +7,7 @@ using UnityEngine;
 /// Brian Fann
 /// 7/6/18
 /// </summary>
+#if UNITY_EDITOR
 [CustomEditor(typeof(PatrolPath)), CanEditMultipleObjects]
 public class PatrolPathEditor : Editor
 {
@@ -28,3 +29,4 @@ public class PatrolPathEditor : Editor
         }
     }
 }
+#endif
