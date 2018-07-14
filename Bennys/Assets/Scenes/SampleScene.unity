@@ -113,6 +113,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &493999948 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114589133308704692, guid: 942a7e9e1a8b11545ab6dd02975c4cbd,
+    type: 2}
+  m_PrefabInternal: {fileID: 717030956}
+  m_Script: {fileID: 11500000, guid: e480060cee1f37c42a0283dbd081aa7b, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +323,7 @@ GameObject:
   - component: {fileID: 695708049}
   - component: {fileID: 695708052}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonMoney
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,18 +386,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 695708050}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1733960845}
-        m_MethodName: Clicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &695708050
@@ -444,7 +439,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1733960845}
-          m_MethodName: Clicked
+          m_MethodName: OnClickLoot
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -496,7 +491,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114649043307816064, guid: 942a7e9e1a8b11545ab6dd02975c4cbd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 942a7e9e1a8b11545ab6dd02975c4cbd, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &721455626
@@ -512,7 +508,7 @@ GameObject:
   - component: {fileID: 721455628}
   - component: {fileID: 721455631}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonHide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -575,18 +571,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 721455629}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1733960845}
-        m_MethodName: Clicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &721455629
@@ -639,7 +624,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1733960845}
-          m_MethodName: Clicked
+          m_MethodName: OnClickHide
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -699,7 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 721455626}
-  m_sendNavigationEvents: 1
+  m_sendNavigationEvents: 0
   m_DragThreshold: 10
 --- !u!4 &816056131
 Transform:
@@ -840,6 +825,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 896730759}
+    - target: {fileID: 114352136375798832, guid: 6ec50bd705b22424da4cbf802ebba6d3,
+        type: 2}
+      propertyPath: playerinteract
+      value: 
+      objectReference: {fileID: 493999948}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ec50bd705b22424da4cbf802ebba6d3, type: 2}
   m_IsPrefabParent: 0
@@ -1024,6 +1014,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 896730759}
+  playerinteract: {fileID: 493999948}
+  button1: {fileID: 721455628}
+  button2: {fileID: 695708049}
 --- !u!1 &2115022843
 GameObject:
   m_ObjectHideFlags: 0
