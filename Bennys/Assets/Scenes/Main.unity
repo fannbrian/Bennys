@@ -323,7 +323,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 30
+        value: 90
       intVariables: []
       boolVariables: []
       stringVariables: []

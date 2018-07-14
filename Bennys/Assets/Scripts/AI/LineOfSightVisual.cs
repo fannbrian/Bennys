@@ -3,6 +3,7 @@ using UnityEngine.AI;
 public class LineOfSightVisual : MonoBehaviour {
     public float DetectionAngle;
     NavMeshAgent _agent;
+
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -23,5 +24,11 @@ public class LineOfSightVisual : MonoBehaviour {
         Gizmos.DrawRay(transform.position, dir1 * 100f);
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, dir2 * 100f);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(_agent.destination, 2f);
     }
 }
