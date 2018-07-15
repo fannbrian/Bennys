@@ -1,23 +1,22 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TableInteraction : MonoBehaviour, IInteractable {
-    public GameObject canvasObj;
-   public PlayerController player;
-	void Start () {
+     public GameObject canvasObj;
+     public PlayerController player;
+     public PlayerInteract playerinteract;
+    void Start () {
         canvasObj.GetComponent<Canvas>().enabled = false;
-        player.GetComponent<PlayerController>().enabled = true;
+       player.GetComponent<PlayerController>().enabled = true;
+        playerinteract.GetComponent<PlayerInteract>().enabled = true;
     }
-	
-	// Update is called once per frame
-	void Update () {
-    
-	}
+    //OnInteraction main function for this object is to activate the menu for the player 
    public void OnInteraction()
     {
-        Debug.Log("I'm a Table");
+        player.GetComponent<PlayerController>().enabled = false;
+        playerinteract.enabled = false;
         canvasObj.GetComponent<Canvas>().enabled = true;
-       player.GetComponent<PlayerController>().enabled = false;
     }
 }
