@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 25331865}
   - component: {fileID: 25331862}
   - component: {fileID: 25331864}
+  - component: {fileID: 25331866}
   m_Layer: 10
   m_Name: Server
   m_TagString: Untagged
@@ -178,7 +179,7 @@ MonoBehaviour:
   fsm:
     dataVersion: 2
     usedInTemplate: {fileID: 0}
-    name: FSM
+    name: Server FSM
     startState: Waypoint Patrol
     states:
     - name: Waypoint Patrol
@@ -187,7 +188,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 57
-        y: 117
+        y: 101
         width: 137
         height: 32
       isBreakpoint: 0
@@ -198,7 +199,7 @@ MonoBehaviour:
           name: playerFound
           isSystemEvent: 0
           isGlobal: 0
-        toState: Chase
+        toState: Chase Patrol
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -243,15 +244,15 @@ MonoBehaviour:
         paramName: []
         paramDataPos: 
         paramByteDataSize: 
-    - name: Chase
+    - name: Chase Patrol
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 334
-        y: 115
-        width: 100
-        height: 32
+        x: 272
+        y: 101
+        width: 118
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -264,15 +265,110 @@ MonoBehaviour:
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
+      - fsmEvent:
+          name: playerCaught
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Seating Player
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.CollisionEvent
         - Bennys.PlayMaker.Actions.ChasePatrolAction
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 00000000
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0100
+        actionStartIndex: 0000000006000000
+        actionHashCodes: beb3310000000000
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Player
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - playerCaught
+        byteData: 00000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 14000000070000001200000017000000130000000f000000
+        paramName:
+        - gameObject
+        - collision
+        - collideTag
+        - sendEvent
+        - storeCollider
+        - storeForce
+        paramDataPos: 000000000000000000000000000000000000000000000000
+        paramByteDataSize: 000000000400000000000000000000000000000000000000
+    - name: Seating Player
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 454
+        y: 101
+        width: 127
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -308,6 +404,9 @@ MonoBehaviour:
     events:
     - name: FINISHED
       isSystemEvent: 1
+      isGlobal: 0
+    - name: playerCaught
+      isSystemEvent: 0
       isGlobal: 0
     - name: playerFound
       isSystemEvent: 0
@@ -432,6 +531,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &25331866
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 25331859}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &111965671
 GameObject:
   m_ObjectHideFlags: 0
