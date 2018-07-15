@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class TableGui : MonoBehaviour {
    public PlayerController player;
     public PlayerInteract playerinteract;
+    public PlayerMoney money;
     public Button button1, button2; 
     Canvas gui;
     public event Action OnPrepareToHide = delegate { };
@@ -17,6 +18,7 @@ public class TableGui : MonoBehaviour {
         Button button2interact = button2.GetComponent<Button>();
         button1interact.onClick.AddListener(OnClickHide);
         button2interact.onClick.AddListener(OnClickLoot);
+        money = FindObjectOfType<PlayerMoney>();
     }
     //when the hide button is clicked, begin the hiding process
     public void OnClickHide()
@@ -35,6 +37,8 @@ public class TableGui : MonoBehaviour {
         player.GetComponent<PlayerController>().enabled = true;
         playerinteract.GetComponent<PlayerInteract>().enabled = true;
         gui.enabled = false;
+        money.mcurrentMoney += 5;
+
     }
     IEnumerator DelayHide()
     {
