@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerHide : MonoBehaviour {
     private TableGui interaction;
+    private ArcadeGUI arcade;
     public bool ishidden;
     private Collider2D collide;
     private SpriteRenderer render;
@@ -14,10 +15,12 @@ public class PlayerHide : MonoBehaviour {
     //Grab everything about the player, including the sprite renderer and collider
     void Start () {
         interaction = FindObjectOfType<TableGui>();
+        arcade = FindObjectOfType<ArcadeGUI>();
         playerfind = interaction.player.GetComponent<PlayerController>();
         playerinteract = FindObjectOfType<PlayerInteract>();
         collide = GetComponent<Collider2D>();
         render = GetComponent<SpriteRenderer>();
+        arcade.OnPrepareToHide += HandleHide;
         interaction.OnPrepareToHide += HandleHide;
 	}
     void Update()
