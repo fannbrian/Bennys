@@ -16,14 +16,18 @@ namespace Bennys.PlayMaker.Actions
 
         public override void OnUpdate()
         {
-            if (IsObjectVisible(PlayerManager.s.player))
+            if (_sight.visibleTargets.Count > 0)
             {
                 _lastKnownPosition = PlayerManager.s.player.transform.position;
                 _agent.SetDestination(_lastKnownPosition);
             }
             else
             {
-                Fsm.SendEventToFsmOnGameObject(Owner, "", "playerLost");
+                if (IsStopped)
+                {
+                    Debug.Log("Lost");
+                    Fsm.SendEventToFsmOnGameObject(Owner, "", "playerLost");
+                }
             }
         }
     }

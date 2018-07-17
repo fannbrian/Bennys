@@ -24,15 +24,13 @@ namespace Bennys.PlayMaker.Actions
         {
             var detectionAngle = _fsm.FsmVariables.GetFsmFloat("DetectionAngle");
 
-            if (IsObjectVisible(PlayerManager.s.player))
+            if (_sight.visibleTargets.Count > 0)
             {
                 Fsm.SendEventToFsmOnGameObject(Owner, "", "playerFound");
             }
 
             // End early if owner hasnt reached destination.
-            if (_agent.pathPending) return;
-            if (_agent.remainingDistance > _agent.stoppingDistance) return;
-            if (_agent.hasPath && _agent.velocity.sqrMagnitude != 0f) return;
+            if (!IsStopped) return;
 
             // If path is circular, set index to next index (if at end of array, loops back to index 0)
             // E.g. 0 -> 1 -> 2 -> 0 -> 1 -> 2
