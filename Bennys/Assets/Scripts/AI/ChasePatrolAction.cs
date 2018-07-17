@@ -2,6 +2,12 @@
 
 namespace Bennys.PlayMaker.Actions
 {
+    /// <summary>
+    /// Patrol action for when an enemy AI has detected player and is chasing player.
+    /// 
+    /// Brian Fann
+    /// 7/10/18
+    /// </summary>
     public class ChasePatrolAction : BasePatrolAction
     {
         private Vector3 _lastKnownPosition;
