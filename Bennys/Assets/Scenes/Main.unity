@@ -450,7 +450,17 @@ Prefab:
     - target: {fileID: 114862797093493290, guid: 4b5f9f45913d01f4ead6783ee2ffac5f,
         type: 2}
       propertyPath: points.Array.data[2].x
-      value: 3
+      value: 3.6652133
+      objectReference: {fileID: 0}
+    - target: {fileID: 114862797093493290, guid: 4b5f9f45913d01f4ead6783ee2ffac5f,
+        type: 2}
+      propertyPath: points.Array.data[2].z
+      value: 2.5817943
+      objectReference: {fileID: 0}
+    - target: {fileID: 114862797093493290, guid: 4b5f9f45913d01f4ead6783ee2ffac5f,
+        type: 2}
+      propertyPath: points.Array.data[1].z
+      value: -0.6645613
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b5f9f45913d01f4ead6783ee2ffac5f, type: 2}
