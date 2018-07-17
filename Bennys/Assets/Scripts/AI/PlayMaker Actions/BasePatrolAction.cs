@@ -8,7 +8,7 @@ namespace Bennys.PlayMaker.Actions
     /// Base class for actions that deal with line of sight with the player.
     /// 
     /// Brian Fann
-    /// 7/10/18
+    /// 7/16/18
     /// </summary>
     [ActionCategory(ActionCategory.Character)]
     public class BasePatrolAction : FsmStateAction

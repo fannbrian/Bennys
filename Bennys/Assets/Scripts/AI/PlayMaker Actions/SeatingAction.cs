@@ -1,11 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
+﻿using UnityEngine;
 using HutongGames.PlayMaker;
 
 namespace Bennys.PlayMaker.Actions
 {
+    /// <summary>
+    /// Custom PlayMaker Action for dragging player to thge closest table.
+    /// 
+    /// Brian Fann
+    /// 7/16/18
+    /// </summary>
     [ActionCategory(ActionCategory.Character)]
     public class SeatingAction : BasePatrolAction
     {
