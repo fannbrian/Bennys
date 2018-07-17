@@ -12,6 +12,7 @@ namespace Bennys
     public class PatrolPath : MonoBehaviour
     {
         [Tooltip("Points in the patrol path.")]
+        [SerializeField]
         public Vector3[] points;
 
         [Tooltip("Once the agent reaches the last point, do they go to the first point?")]

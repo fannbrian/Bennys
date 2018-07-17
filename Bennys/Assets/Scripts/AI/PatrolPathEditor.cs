@@ -28,6 +28,8 @@ namespace Bennys
             {
                 path.points[i] = Handles.PositionHandle(path.points[i], Quaternion.identity);
             }
+
+            EditorUtility.SetDirty(path);
         }
     }
 }

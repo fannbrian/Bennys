@@ -9,7 +9,7 @@ namespace Bennys
     /// Brian Fann
     /// 7/16/18
     /// </summary>
-    [CustomEditor(typeof(LineOfSight)), CanEditMultipleObjects]
+    [CustomEditor(typeof(LineOfSight)), CanEditMultipleObjects, ExecuteInEditMode]
     public class LineOfSightEditor : Editor
     {
         void OnSceneGUI()
