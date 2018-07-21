@@ -22,6 +22,7 @@ namespace Bennys.PlayMaker.Actions
 
         public override void OnUpdate()
         {
+            // If player is in line of sight, set position to player.
             if (_sight.visibleTargets.Count > 0)
             {
                 _lastKnownPosition = PlayerManager.s.player.transform.position;
@@ -29,9 +30,8 @@ namespace Bennys.PlayMaker.Actions
             }
             else
             {
-                if (IsStopped)
+                if (IsStopped || PlayerManager.s.IsGrabbed)
                 {
-                    Debug.Log("Lost");
                     Fsm.SendEventToFsmOnGameObject(Owner, "", "playerLost");
                 }
             }

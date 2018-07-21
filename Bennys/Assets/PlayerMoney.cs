@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 
 public class PlayerMoney : MonoBehaviour {
+    public static PlayerMoney s;
     public event Action OnDeath = delegate { };
     public float mcurrentMoney;
     public bool mIsDead = false;
@@ -43,4 +44,8 @@ public class PlayerMoney : MonoBehaviour {
         }
     }
 
+    public void Awake()
+    {
+        s = this;
+    }
 }

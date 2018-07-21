@@ -1,12 +1,49 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerManager : MonoBehaviour {
-    public static PlayerManager s;
-    public GameObject player;
+namespace Bennys
+{
+    /// <summary>
+    /// Includes reference and flags for player. Pretty messy code but it works.
+    /// 
+    /// Brian Fann
+    /// 7/21/18
+    /// </summary>
+    public class PlayerManager : MonoBehaviour
+    {
+        public static PlayerManager s { get; set; }
+        public GameObject player;
+        public float GracePeriod;
+        public int MoneyLostWhenServed;
+        public int HungerAddedWhenServed;
 
-	void Awake () {
-        s = this;
-	}
+        public bool IsGrabbed
+        {
+            get
+            {
+                return _isGrabbed;
+            }
+            set
+            {
+                player.layer = value ? 10 : 9;
+                _isGrabbed = value;
+            }
+        }
+
+        bool _isGrabbed;
+
+        void Awake()
+        {
+            s = this;
+        }
+
+        public void ReleasePlayer()
+        {
+            Invoke("OnRelease", GracePeriod);
+        }
+
+        private void OnRelease()
+        {
+            IsGrabbed = false;
+        }
+    }
 }

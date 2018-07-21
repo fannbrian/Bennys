@@ -15,28 +15,25 @@ namespace Bennys.PlayMaker.Actions
         FsmGameObject player;
         Rigidbody rb;
 
+        bool _hasSlave;
+
         public override void OnEnter()
         {
             base.OnEnter();
 
-            var tables = GameObject.FindGameObjectsWithTag("Table");
-            var closestTable = tables[0];
-            var closestDistance = 9999999999999f;
+            PlayerHide.s.UnHideImmediate();
 
-            foreach(var table in tables)
-            {
-                var distance = Vector3.Distance(table.transform.position, Owner.transform.position);
-
-                if (distance < closestDistance)
-                {
-                    closestTable = table;
-                    closestDistance = distance;
-                }
-            }
-
-            _agent.SetDestination(closestTable.transform.position);
+            // Set AI destination to closest table
+            var table = ObjectManager.s.FindClosestObjectWithTag(Owner, "Table");
+            _agent.SetDestination(table.transform.position);
+            
             player = Fsm.Variables.GetFsmGameObject("Player");
             rb = player.Value.GetComponent<Rigidbody>();
+            var collider = player.Value.GetComponent<Collider>();
+
+            // Set flags
+            PlayerManager.s.IsGrabbed = true;
+            _hasSlave = false;
         }
 
         public override void OnUpdate()
@@ -47,15 +44,20 @@ namespace Bennys.PlayMaker.Actions
             var playerPos = player.Value.transform.position;
             var distance = Vector3.Distance(ownerPos, playerPos);
 
+            // Clamp player to maintain a 1 unit distance from server.
             if (distance > 1f)
             {
                 var heading = playerPos - ownerPos;
                 rb.MovePosition(ownerPos + heading * (1f / distance));
             }
 
-            if (IsStopped)
+            // Call closest server to bring food.
+            if (IsStopped && !_hasSlave)
             {
-                Finish();
+                _hasSlave = true;
+
+                var slaveServer = ObjectManager.s.FindClosestObjectWithTag(Owner, "Npc");
+                Fsm.SendEventToFsmOnGameObject(slaveServer, "", "onEnslave");
             }
         }
     }
