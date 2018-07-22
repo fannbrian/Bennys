@@ -3,17 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour {
+    public PlayerController controller;
     IInteractable interact;
-    RaycastHit2D hit;
+
+    public void Start()
+    {
+        controller = GetComponent<PlayerController>();
+    }
+
     //This update will draw the raycasthit and check if the player is touching an interactable object
     private void Update()
     {
-        hit = Physics2D.Raycast(transform.position, transform.up, 0.3f, LayerMask.GetMask("Furniture"));
-        Debug.DrawRay(transform.position, transform.up);
+        //hit = Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), controller.movedirection, 1f, LayerMask.GetMask("Furniture"));
+        var ray = new Ray(transform.position + new Vector3(0, 0.5f, 0), controller.movedirection.normalized);
+        Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), controller.movedirection.normalized);
 
-        if (hit.collider != null)
+        RaycastHit hit;
+        
+        if (Physics.Raycast(ray, out hit, 1f))
         {
-            interact = hit.collider.GetComponent<Collider2D>().GetComponent<IInteractable>();
+            interact = hit.collider.GetComponent<Collider>().GetComponent<IInteractable>();
 
             //If the player is touching an interactable object and presses the space bar, the object will do the interaction
             if (interact != null && Input.GetKeyDown(KeyCode.Space))
@@ -23,8 +32,4 @@ public class PlayerInteract : MonoBehaviour {
             }
         }
     }
-
-    
-
- 
 }

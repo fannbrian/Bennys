@@ -69,6 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasObj: {fileID: 0}
+  player: {fileID: 0}
+  playerinteract: {fileID: 0}
 --- !u!212 &212879350215240370
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -4,9 +4,10 @@ using System;
 using UnityEngine;
 
 public class PlayerHunger : MonoBehaviour { //keeps track of the main player's hunger
+    public static PlayerHunger s;
     public event Action OnDeath = delegate { };
-    private bool mIsDead = false;
-    private float mcurrentHunger = 30f;
+    public bool mIsDead = false;
+    public float mcurrentHunger = 30f;
     public float Hunger {
         get{
             return mcurrentHunger; 
@@ -67,5 +68,8 @@ public class PlayerHunger : MonoBehaviour { //keeps track of the main player's h
             OnDeath();
         }
     }
-
+    public void Awake()
+    {
+        s = this;
+    }
 }
