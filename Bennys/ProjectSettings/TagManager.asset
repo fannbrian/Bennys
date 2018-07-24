@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Table
   - Npc
+  - ArcadeUI
+  - TableUI
   layers:
   - Default
   - TransparentFX

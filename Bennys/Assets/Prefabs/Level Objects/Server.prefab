@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 195574096190555750}
   - component: {fileID: 114843846184039028}
   - component: {fileID: 65175486253112340}
+  - component: {fileID: 114948147537200816}
   m_Layer: 10
   m_Name: Server
   m_TagString: Npc
@@ -575,7 +576,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -593,7 +594,7 @@ MonoBehaviour:
     handleTriggerEnter: 0
     handleTriggerExit: 0
     handleTriggerStay: 0
-    handleCollisionEnter: 0
+    handleCollisionEnter: 1
     handleCollisionExit: 0
     handleCollisionStay: 0
     handleParticleCollision: 0
@@ -609,7 +610,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!114 &114862797093493290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -629,6 +630,19 @@ MonoBehaviour:
   pointSize: 0.25
   pointColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &114948147537200816
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383692921656544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 845409985, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetFSMs:
+  - {fileID: 114843846184039028}
 --- !u!195 &195574096190555750
 NavMeshAgent:
   m_ObjectHideFlags: 1
