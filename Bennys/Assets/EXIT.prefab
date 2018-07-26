@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4049918701712822}
   - component: {fileID: 65578617200975202}
   - component: {fileID: 114282890155371478}
+  - component: {fileID: 114313417500642106}
   m_Layer: 0
   m_Name: EXIT
   m_TagString: Untagged
@@ -50,14 +51,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1931456420829750}
-  m_LocalRotation: {x: 0.71230996, y: 0.0033795368, z: 0.0033299057, w: 0.70184904}
-  m_LocalPosition: {x: 8.1, y: 1.29, z: 5.44}
+  m_LocalRotation: {x: 0.7071068, y: 0.00002489984, z: -0.00002489984, w: 0.7071068}
+  m_LocalPosition: {x: -7.38, y: 0.5, z: -0.2}
   m_LocalScale: {x: 0.29280216, y: 0.17921175, z: 0.6335628}
   m_Children:
   - {fileID: 4670569008607804}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 91.00699, y: -32.672974, z: -32.677002}
+  m_LocalEulerAnglesHint: {x: 90, y: -32.672974, z: -32.677002}
 --- !u!4 &4670569008607804
 Transform:
   m_ObjectHideFlags: 1
@@ -81,8 +82,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.7426825, y: 3.6789992, z: 0}
-  m_Center: {x: 0.006959117, y: 0.07250012, z: 0.5000391}
+  m_Size: {x: 5.631573, y: 3.6789992, z: 2.9410052}
+  m_Center: {x: 0.062513165, y: 0.07250004, z: -0.9704633}
 --- !u!114 &114282890155371478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,7 +95,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b48cb5670137c047a35ea8ab6cbc2e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: '"Main Menu"'
+  sceneName: Main Menu
+--- !u!114 &114313417500642106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931456420829750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: 00000000
 --- !u!212 &212726271380869104
 SpriteRenderer:
   m_ObjectHideFlags: 1
