@@ -30,6 +30,7 @@ namespace Bennys.PlayMaker.Actions
             player = Fsm.Variables.GetFsmGameObject("Player");
             rb = player.Value.GetComponent<Rigidbody>();
             var collider = player.Value.GetComponent<Collider>();
+            _agent.speed = _speed.SeatSpeed;
 
             // Set flags
             PlayerManager.s.IsGrabbed = true;

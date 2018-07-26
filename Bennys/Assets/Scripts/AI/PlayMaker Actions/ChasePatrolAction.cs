@@ -16,6 +16,7 @@ namespace Bennys.PlayMaker.Actions
         {
             base.OnEnter();
 
+            _agent.speed = _speed.ChaseSpeed;
             _lastKnownPosition = PlayerManager.s.player.transform.position;
             _agent.SetDestination(_lastKnownPosition);
         }

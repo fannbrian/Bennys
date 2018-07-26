@@ -17,6 +17,7 @@ namespace Bennys.PlayMaker.Actions
         protected PatrolPath _path { get; set; }
         protected LineOfSight _sight { get; set; }
         protected NavMeshAgent _agent { get; set; }
+        protected AgentSpeed _speed { get; set; }
 
         public bool IsStopped {
             get
@@ -37,6 +38,7 @@ namespace Bennys.PlayMaker.Actions
             _path = Owner.GetComponent<PatrolPath>();
             _sight = Owner.GetComponent<LineOfSight>();
             _agent = Owner.GetComponent<NavMeshAgent>();
+            _speed = Owner.GetComponent<AgentSpeed>();
         }
     }
 }

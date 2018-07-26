@@ -18,6 +18,7 @@ namespace Bennys.PlayMaker.Actions
 
             // Set destination to first point.
             _agent.SetDestination(_path.points[_currentDestinationIndex]);
+            _agent.speed = _speed.PatrolSpeed;
         }
 
         public override void OnUpdate()
