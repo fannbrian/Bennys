@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1383692921656544}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.47, y: 0.5, z: -2.69}
+  m_LocalPosition: {x: -0.51, y: -0.5, z: -3.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4946022195656478}
@@ -623,16 +623,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {x: -1.3081119, y: 1, z: 1.13553}
-  - {x: -4.6905003, y: 1, z: -2.8583612}
-  - {x: -7.1390457, y: 1, z: 2.5817943}
+  - {x: -0.4632867, y: 1, z: -3.5863}
+  - {x: 5.8337393, y: 1, z: -3.5439327}
+  - {x: 5.792735, y: 1, z: 2.6092536}
+  - {x: -0.5182891, y: 1, z: 2.622193}
+  - {x: -0.4891575, y: 1, z: -3.576165}
   IsCircular: 1
   pointSize: 0.25
   pointColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &114948147537200816
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1383692921656544}
@@ -652,7 +654,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 2.5
   m_Acceleration: 99999
   avoidancePriority: 50
   m_AngularSpeed: 0
