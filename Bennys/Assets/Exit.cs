@@ -9,6 +9,7 @@ public class Exit : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
+        Debug.Log("EXIT");
         if (collision.tag == "Player")
         {
             SceneManager.LoadScene(sceneName);
