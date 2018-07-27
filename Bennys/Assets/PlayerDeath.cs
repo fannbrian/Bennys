@@ -8,6 +8,7 @@ namespace Bennys
     {
         PlayerHunger hunger;
         PlayerMoney money;
+        public GameObject gameover;
         PlayerController player;
         PlayerInteract interact;
         // Use this for initialization
@@ -19,6 +20,8 @@ namespace Bennys
             money.OnDeath += HandleDeath;
             player = PlayerManager.s.player.GetComponent<PlayerController>();
             interact = GetComponent<PlayerInteract>();
+            gameover.GetComponent<Canvas>().enabled = false;
+      
         }
 
         void HandleDeath()
@@ -28,12 +31,14 @@ namespace Bennys
             Debug.Log("You Died");
             player.enabled = false;
             interact.enabled = false;
+            player.render.color = Color.grey;
             StartCoroutine(ReloadScene());
         }
         IEnumerator ReloadScene()
         {
             yield return new WaitForSeconds(3f);
-            SceneManager.LoadScene("Main Menu");
+            gameover.GetComponent<Canvas>().enabled = true;
+
         }
     }
 }
