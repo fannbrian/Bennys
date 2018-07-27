@@ -3368,9 +3368,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 118304464}
-  GracePeriod: 0
-  MoneyLostWhenServed: 0
-  HungerAddedWhenServed: 0
+  GracePeriod: 1
+  MoneyLostWhenServed: 10
+  HungerAddedWhenServed: 5
 --- !u!4 &1853016807
 Transform:
   m_ObjectHideFlags: 0
