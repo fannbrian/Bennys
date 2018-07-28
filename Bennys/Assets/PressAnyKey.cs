@@ -6,11 +6,10 @@ using UnityEngine.UI;
 
 public class PressAnyKey : MonoBehaviour {
     Canvas canvas;
-    Text text;
+
 
 	void Start () {
         canvas = GetComponent<Canvas>();
-        text = canvas.GetComponent<Text>();
         StartCoroutine(FlashingText());
     }
 	
