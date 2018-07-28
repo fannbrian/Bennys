@@ -12,6 +12,7 @@ public class ServerSpeechBubble : MonoBehaviour {
    void Start()
     {
         index = Random.Range(0, textarray.Length - 1);
+        servertext.text = textarray[index];
     }
     public void Generatespeech()
     {
