@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour {
 
     public void Play() // Pause UI set to inactive, time reset to 1, GameIsPaused set to false
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Opening");
         Debug.Log("Loading Intro...");
     }
 
