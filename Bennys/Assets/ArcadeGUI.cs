@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Bennys;
 
 public class ArcadeGUI : MonoBehaviour {
     public PlayerController player;
@@ -26,6 +27,13 @@ public class ArcadeGUI : MonoBehaviour {
         money = FindObjectOfType<PlayerMoney>();
         generate = GetComponent<GenerateMoney>();
 
+    }
+    private void Update()
+    {
+        if (PlayerManager.s.IsGrabbed)
+        {
+            gui.enabled = false;
+        }
     }
     //when the hide button is clicked, begin the hiding process
     public void OnClickPlay()
