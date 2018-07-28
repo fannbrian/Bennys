@@ -45,6 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Layer
+  - name: Sprite Layer
     uniqueID: 241789527
+    locked: 0
+  - name: Floor Layer
+    uniqueID: 4065251949
     locked: 0
