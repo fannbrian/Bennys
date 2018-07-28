@@ -14,6 +14,7 @@ namespace Bennys
         {
             player = PlayerManager.s.player.GetComponent<PlayerController>();
             playerinteract = PlayerManager.s.player.GetComponent<PlayerInteract>();
+            
 
             canvasObj.GetComponent<Canvas>().enabled = false;
             player.enabled = true;
@@ -22,9 +23,12 @@ namespace Bennys
         //OnInteraction main function for this object is to activate the menu for the player 
         public void OnInteraction()
         {
-            player.GetComponent<PlayerController>().enabled = false;
-            playerinteract.enabled = false;
-            canvasObj.GetComponent<Canvas>().enabled = true;
+            if (!PlayerManager.s.IsGrabbed)
+            {
+                player.GetComponent<PlayerController>().enabled = false;
+                playerinteract.enabled = false;
+                canvasObj.GetComponent<Canvas>().enabled = true;
+            }
         }
     }
 }

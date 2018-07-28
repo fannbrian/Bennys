@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Bennys;
 
 public class TableGui : MonoBehaviour {
    public PlayerController player;
@@ -24,6 +25,14 @@ public class TableGui : MonoBehaviour {
         money = FindObjectOfType<PlayerMoney>();
         generate = GetComponent<GenerateMoney>();
        
+       
+    }
+    private void Update()
+    {
+        if (PlayerManager.s.IsGrabbed)
+        {
+            gui.enabled = false;
+        }
     }
     //when the hide button is clicked, begin the hiding process
     public void OnClickHide()
