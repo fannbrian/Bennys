@@ -41,13 +41,13 @@ public class PauseMenu : MonoBehaviour {
         GameIsPaused = true;
     }
 
-    public void Settings()
+    public void Settings() // Pause UI set to inactive. Settings UI set to active. 
     {
         pauseMenuUI.SetActive(false);
         settingsPanelUI.SetActive(true);
     }
 
-    public void BackToPause()
+    public void BackToPause() // Pause UI set to active. Settings UI set to inactive. 
     {
         pauseMenuUI.SetActive(true);
         settingsPanelUI.SetActive(false);
