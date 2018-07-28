@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Bennys;
+
 
 public class PlayerController : MonoBehaviour {
     [SerializeField]
     public float movementspeed = 1f;
-    private Rigidbody rb;
+    Rigidbody rb;
     float horizontal, vertical;
     float heading;
     bool isflipped = false;
@@ -21,7 +23,6 @@ public class PlayerController : MonoBehaviour {
     }
     void FixedUpdate()
     {
-    
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
         //movedirection is based on what axis of the keyboard the player is using, i.e WASD or arrow keys 
