@@ -2568,7 +2568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: -92}
+  m_AnchoredPosition: {x: -9, y: -92}
   m_SizeDelta: {x: 580.5, y: 202.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1124261562
@@ -2623,7 +2623,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4a35398cab2c8b141ab4d97451c0f3e4, type: 3}
-    m_FontSize: 30
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2809,12 +2809,12 @@ Prefab:
     - target: {fileID: 224832621903763568, guid: 2b6a134c35d1a6748b0e5a9bed6cea2a,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224148808226347394, guid: 2b6a134c35d1a6748b0e5a9bed6cea2a,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114847515758279846, guid: 2b6a134c35d1a6748b0e5a9bed6cea2a,
         type: 2}
@@ -2834,12 +2834,12 @@ Prefab:
     - target: {fileID: 224148808226347394, guid: 2b6a134c35d1a6748b0e5a9bed6cea2a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -130
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 224832621903763568, guid: 2b6a134c35d1a6748b0e5a9bed6cea2a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 81
+      value: 86
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b6a134c35d1a6748b0e5a9bed6cea2a, type: 2}
