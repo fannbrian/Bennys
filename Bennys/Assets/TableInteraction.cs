@@ -25,7 +25,8 @@ namespace Bennys
         {
             if (!PlayerManager.s.IsGrabbed)
             {
-                player.GetComponent<PlayerController>().enabled = false;
+                //  player.GetComponent<PlayerController>().enabled = false;
+                player.isinteracting = true;
                 playerinteract.enabled = false;
                 canvasObj.GetComponent<Canvas>().enabled = true;
             }

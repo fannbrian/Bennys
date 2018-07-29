@@ -28,7 +28,19 @@ namespace Bennys
                 _isGrabbed = value;
             }
         }
-
+        public bool IsSeated
+        {
+            get
+            {
+                return _isSeated;
+            }
+            set
+            {
+                player.layer = value ? 10 : 9;
+                _isSeated = value;
+            }
+        }
+        bool _isSeated;
         bool _isGrabbed;
 
         void Awake()
@@ -44,6 +56,7 @@ namespace Bennys
         private void OnRelease()
         {
             IsGrabbed = false;
+            IsSeated = false;
         }
     }
 }

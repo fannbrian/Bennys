@@ -50,14 +50,14 @@ namespace Bennys
             yield return new WaitForSeconds(0.5f);
             ishidden = false;
             render.enabled = true;
-            playerfind.enabled = true;
+            playerfind.isinteracting = false;
             playerinteract.enabled = true;
         }
         public void UnHideImmediate()
         {
             ishidden = false;
             render.enabled = true;
-            playerfind.enabled = true;
+            playerfind.isinteracting = false;
             playerinteract.enabled = true;
         }
     }
