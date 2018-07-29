@@ -58,7 +58,8 @@ public class TableGui : MonoBehaviour {
     IEnumerator DelayLoot()
     {
         yield return new WaitForSeconds(1.5f);
-        player.GetComponent<PlayerController>().enabled = true;
+        //     player.GetComponent<PlayerController>().enabled = true;
+        player.isinteracting = false;
         playerinteract.GetComponent<PlayerInteract>().enabled = true;
         if (chance <= 10 && chance > 5)
         {
