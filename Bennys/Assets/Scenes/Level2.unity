@@ -883,7 +883,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1383692921656544, guid: 4b5f9f45913d01f4ead6783ee2ffac5f, type: 2}
       propertyPath: m_Name
-      value: Server (6)
+      value: Cook
       objectReference: {fileID: 0}
     - target: {fileID: 114843846184039028, guid: 4b5f9f45913d01f4ead6783ee2ffac5f,
         type: 2}
@@ -919,6 +919,17 @@ Prefab:
       propertyPath: m_Speed
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 95930198542484794, guid: 4b5f9f45913d01f4ead6783ee2ffac5f,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ecbd90242a544ff4a852664d6760d33d, type: 2}
+    - target: {fileID: 212412400159237570, guid: 4b5f9f45913d01f4ead6783ee2ffac5f,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300026, guid: 67eb0b2501253424585bebecb4e234d0,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b5f9f45913d01f4ead6783ee2ffac5f, type: 2}
   m_IsPrefabParent: 0
