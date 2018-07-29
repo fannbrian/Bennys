@@ -34,3 +34,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Bennys/Assets/Prefabs/UI/ServerSpeechCanvas.prefab.meta
+Bennys/Assets/Prefabs/UI/ServerSpeechCanvas.prefab
