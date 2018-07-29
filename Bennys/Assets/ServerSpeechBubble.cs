@@ -25,7 +25,9 @@ public class ServerSpeechBubble : MonoBehaviour {
     }
     public void GeneratecookSpeech()
     {
+        
         index = Random.Range(0, textarray.Length - 1);
+      //  Debug.Log(textarraycook[index]);
         servertext.text = textarraycook[index];
     }
 
