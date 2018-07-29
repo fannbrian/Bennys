@@ -12,6 +12,10 @@ public class MainMenu : MonoBehaviour {
 
     public GameObject settingsPanelUI; // Options Menu UI game object assigned in inspector
 
+    public GameObject settingsBG; // BG for settings Menu
+
+    public GameObject eatAtBennysArrow; 
+
     public int clickCount;
 
     public UnityEvent PleaseDontLeave;
@@ -26,14 +30,19 @@ public class MainMenu : MonoBehaviour {
     {
       
         settingsPanelUI.SetActive(true);
+        settingsBG.SetActive(true);
+
         mainMenuButtonLayoutUI.SetActive(false);
+        eatAtBennysArrow.SetActive(false);
     }
 
     public void BackToMenuFromSettings()
     {
-    
         settingsPanelUI.SetActive(false);
+        settingsBG.SetActive(false);
+
         mainMenuButtonLayoutUI.SetActive(true);
+        eatAtBennysArrow.SetActive(true);
     }
 
     public void Credits() // If menu button is pressed, then load Main Menu scene
@@ -45,30 +54,25 @@ public class MainMenu : MonoBehaviour {
     public void QuitGamePanel() // if Quit button is pressed, then close application
     {
         quitPanelUI.SetActive(true);
+        settingsBG.SetActive(true);
+
         mainMenuButtonLayoutUI.SetActive(false);
+        eatAtBennysArrow.SetActive(false);
     }
 
     public void QuitYes()
     {
-    //    if (clickCount >= 6)
-    //    {
             Application.Quit();
-            Debug.Log("Quitting... ");
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("Please Dont Leave... ");
-    //        PleaseDontLeave.Invoke();
-    //    }
-        /// player needs to click Leave Benny's button 6 times to leave. After clicking once, everything starts 
-        // to go black and change color      
-       
+            Debug.Log("Quitting... ");       
     }
 
     public void BackToMenuFromQuitPanel()
     {
         quitPanelUI.SetActive(false);
+        settingsBG.SetActive(false);
+
         mainMenuButtonLayoutUI.SetActive(true);
+        eatAtBennysArrow.SetActive(true);
     }
 }
 
