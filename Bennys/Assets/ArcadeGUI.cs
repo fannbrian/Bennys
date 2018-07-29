@@ -53,16 +53,22 @@ public class ArcadeGUI : MonoBehaviour {
     IEnumerator DelayHide()
     {
         yield return new WaitForSeconds(1f);
-        OnPrepareToHide();
+        if (!PlayerManager.s.IsGrabbed)
+        {
+            OnPrepareToHide();
+        }
     }
     IEnumerator DelayLoot()
     {
         yield return new WaitForSeconds(1.5f);
-        player.GetComponent<PlayerController>().enabled = true;
-        playerinteract.GetComponent<PlayerInteract>().enabled = true;
-        if (chance <= 20)
+        if (!PlayerManager.s.IsGrabbed)
         {
-            money.mcurrentMoney += generate.CalculateAmount(2, 5);
+            player.isinteracting = false;
+            playerinteract.GetComponent<PlayerInteract>().enabled = true;
+            if (chance <= 20)
+            {
+                money.mcurrentMoney += generate.CalculateAmount(2, 5);
+            }
         }
     }
 }

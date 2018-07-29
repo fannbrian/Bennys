@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Bennys;
 
 public class ArcadeMachine : MonoBehaviour,IInteractable {
     PlayerMoney money;
@@ -16,8 +17,11 @@ public class ArcadeMachine : MonoBehaviour,IInteractable {
 	
    public void OnInteraction()
     {
-        player.GetComponent<PlayerController>().enabled = false;
-        playerinteract.enabled = false;
-        canvasObj.GetComponent<Canvas>().enabled = true;
+        if (!PlayerManager.s.IsGrabbed)
+        {
+            player.isinteracting = true;
+            playerinteract.enabled = false;
+            canvasObj.GetComponent<Canvas>().enabled = true;
+        }
     }
 }

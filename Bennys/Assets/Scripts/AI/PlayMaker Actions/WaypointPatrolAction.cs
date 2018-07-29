@@ -25,7 +25,7 @@ namespace Bennys.PlayMaker.Actions
         {
             var detectionAngle = _fsm.FsmVariables.GetFsmFloat("DetectionAngle");
 
-            if (_sight.visibleTargets.Count > 0 && !PlayerManager.s.IsGrabbed)
+            if (_sight.visibleTargets.Count > 0 && !PlayerManager.s.IsGrabbed && !PlayerManager.s.player.GetComponent<PlayerHide>().ishidden)
             {
                 Fsm.SendEventToFsmOnGameObject(Owner, "", "playerFound");
             }

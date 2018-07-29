@@ -21,9 +21,6 @@ public class ServerControlSpeech : MonoBehaviour {
             istalking = true;
             canvas.enabled = true;
             StartCoroutine(Talk());
-          
-            
-            
         }
 
 	}
