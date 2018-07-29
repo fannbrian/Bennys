@@ -14,11 +14,11 @@ public class MainMenu : MonoBehaviour {
 
     public GameObject settingsBG; // BG for settings Menu
 
-    public GameObject eatAtBennysArrow; 
+    public GameObject eatAtBennysArrow;
+
+    public GameObject creditsPanel; 
 
     public int clickCount;
-
-    public UnityEvent PleaseDontLeave;
 
     public void Play() // Pause UI set to inactive, time reset to 1, GameIsPaused set to false
     {
@@ -47,8 +47,12 @@ public class MainMenu : MonoBehaviour {
 
     public void Credits() // If menu button is pressed, then load Main Menu scene
     {
-        SceneManager.LoadScene("Credits");
-        Debug.Log("Loading Credits... ");
+        creditsPanel.SetActive(true);
+    }
+
+    public void BackFromCredits()
+    {
+        creditsPanel.SetActive(false);
     }
 
     public void QuitGamePanel() // if Quit button is pressed, then close application
