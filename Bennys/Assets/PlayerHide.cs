@@ -37,8 +37,11 @@ namespace Bennys
         //This sets the necessary components inactive to simulate "hiding"
         void HandleHide()
         {
-            ishidden = true;
-            render.enabled = false;
+            if (!PlayerManager.s.IsGrabbed)
+            {
+                ishidden = true;
+                render.enabled = false;
+            }
         }
         //turns the previously deactivated components back on after 0.5 second delay
         void HandleUnhide()
@@ -48,10 +51,11 @@ namespace Bennys
         IEnumerator UnHideDelay()
         {
             yield return new WaitForSeconds(0.5f);
-            ishidden = false;
-            render.enabled = true;
-            playerfind.isinteracting = false;
-            playerinteract.enabled = true;
+                ishidden = false;
+                render.enabled = true;
+                playerfind.isinteracting = false;
+                playerinteract.enabled = true;
+           
         }
         public void UnHideImmediate()
         {

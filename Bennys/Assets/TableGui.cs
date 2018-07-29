@@ -52,22 +52,29 @@ public class TableGui : MonoBehaviour {
     }
     IEnumerator DelayHide()
     {
+     
         yield return new WaitForSeconds(1f);
-        OnPrepareToHide();
+        if (!PlayerManager.s.IsGrabbed)
+        {
+            OnPrepareToHide();
+        }
     }
     IEnumerator DelayLoot()
     {
         yield return new WaitForSeconds(1.5f);
         //     player.GetComponent<PlayerController>().enabled = true;
-        player.isinteracting = false;
-        playerinteract.GetComponent<PlayerInteract>().enabled = true;
-        if (chance <= 10 && chance > 5)
+        if (!PlayerManager.s.IsGrabbed)
         {
-            money.mcurrentMoney += generate.CalculateAmount(1, 2);
-        }
-        else if(chance <= 5)
-        {
-            money.mcurrentMoney += 3;
+            player.isinteracting = false;
+            playerinteract.GetComponent<PlayerInteract>().enabled = true;
+            if (chance <= 10 && chance > 5)
+            {
+                money.mcurrentMoney += generate.CalculateAmount(1, 2);
+            }
+            else if (chance <= 5)
+            {
+                money.mcurrentMoney += 3;
+            }
         }
     }
 }
